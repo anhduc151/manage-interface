@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/> 
+    <title>Thống kê doanh thu</title>
+    <!--Favicon-->
+    <link rel="icon" href="../../img/building.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../../img/building.ico" type="image/x-icon"/>
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../css/site.css" rel="stylesheet">
+    <link href="../../css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/Revenue_styles.css">
+    <!-- link revenue -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"
+      integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link href="./Revenue_styles.css" rel="stylesheet" type="text/css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+
+ 
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="">BatDongSan.com</a>
+            <div class="btn-group pull-right">
+                <a class="btn" href=""><i class='bx bxs-user-circle'></i></i> Admin</a>
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="">
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="">Thông tin cá nhân</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Đăng xuất</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+          <ul class="nav nav-list">
+            <li class="nav-header"><i class='bx bxs-home'></i> Trang chủ</li>
+            <li class="active"><a href="index.html">Thông tin trang chủ</a></li>
+
+            <li class="nav-header"><i class='bx bxs-building'></i> Quản lý sản phẩm</li>
+            <li><a href="../../menu1/product/add.html">Thêm sản phẩm</a></li>
+            <li><a href="../../menu1/product/edit.html">Sửa sản phẩm</a></li>
+            <li><a href="../../menu1/product/remove.html">Xoá sản phẩm</a></li>
+
+            <li class="nav-header"><i class='bx bxs-user-circle'></i> Quản lý user</li>
+            <li><a href="../../menu1/user/addUser.html">Thêm tài khoản user</a></li>
+            <li><a href="../../menu1/user/removeUser.html">Xoá tài khoản user</a></li>
+
+            <li class="nav-header"><i class='bx bxs-bar-chart-alt-2'></i> Quản lý doanh thu</li>
+            <li><a href="../../menu1/revenue/statistical.html">Thống kê doanh thu</a></li>
+            
+            
+            <li class="nav-header"><i class='bx bxs-food-menu'></i> Quản lý đơn hàng</li>
+            <li><a href="../../menu1/shipment/adduserShipment.html">Thêm người dùng</a></li>
+            <li><a href="../../menu1/shipment/queryShipment.html">Truy vấn người dùng</a></li>
+
+            <li class="nav-header"><i class='bx bxs-help-circle'></i> Hỗ trợ khách hàng</li>
+            <li><a href="../../menu1/help/helpUser.html">Đánh giá và yêu cầu của khách hàng</a></li>
+            
+
+            
+
+        </ul>
+        </div>
+
+
+        <!-- Start Revenue -->
+        <!-- <div id="Rev_leaderboard" class="d-flex justify-content-evenly"></div> -->
+       <!--section for doughnut chart-->
+      <div id="revenue" class="d-inline-flex flex-column">
+        <div class="d-flex flex-row justify-content-between">
+          <h3>Tổng doanh thu</h3>
+          <select name="This Month" id="months-btn">
+            <option>Tháng này</option>
+            <option>Tháng 1</option>
+            <option>Tháng 2</option>
+            <option>Tháng 3</option>
+            <option>Tháng 4</option>
+            <option>Tháng 5</option>
+            <option>Tháng 6</option>
+            <option>Tháng 7</option>
+            <option>Tháng 8</option>
+            <option>Tháng 9</option>
+            <option>Tháng 10</option>
+            <option>Tháng 11</option>
+            <option>Tháng 12</option>
+
+          </select>
+        </div>
+        <canvas id="donutchart" ></canvas>
+      </div>
+      <!--section for leaderboard display-->
+      <div id="leaderboard" class="d-inline-flex flex-column">
+        <div class="d-inline-flex flex-row justify-content-between">
+          <h3>Bảng xếp hạng</h3>
+          <select name="This Month" id="months-btn">
+            <option>Tháng này</option>
+            <option>Tháng 1</option>
+            <option>Tháng 2</option>
+            <option>Tháng 3</option>
+            <option>Tháng 4</option>
+            <option>Tháng 5</option>
+            <option>Tháng 6</option>
+            <option>Tháng 7</option>
+            <option>Tháng 8</option>
+            <option>Tháng 9</option>
+            <option>Tháng 10</option>
+            <option>Tháng 11</option>
+            <option>Tháng 12</option>
+          </select>
+        </div>
+        <!--Leaderboard is displayed with help of table-->
+        <div class="table-responsive">
+          <table class="table table-responsive-lg table-borderless align-middle">
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td><img src="../../img/Group 66.png" alt="profile"></td>
+                <td class="name">Lê Anh Đức</td><td>       </td>
+                <td>59.000.000.000 đ</td>
+                <td>&uarr;</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td><img src="../../img/Group 66.png" alt="profile"></td>
+                <td class="name">Nguyễn Thảo Vân</td><td>       </td>
+                <td>26.000.000.000 đ</td>
+                <td>&darr;</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td ><img src="../../img/Group 66.png" alt="profile"></td>
+                <td class="name">Nguyễn Hữu Hào</td><td>        </td>
+                <td>28.000.000.000 đ</td>
+                <td>&uarr;</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td><img src="../../img/Group 66.png" alt="profile"></td>
+                <td class="name">Võ Xuân Mạnh</td><td>       </td>
+                <td>29.000.000.000 đ</td>
+                <td>&darr;</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td><img src="../../img/Group 66.png" alt="profile"></td>
+                <td class="name">Hoàng Quốc Huy</td><td>       </td>
+                <td>27.000.000.000 đ</td>
+                <td>&darr;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+        <!-- Leard -->
+
+    </div>
+
+        <div id="line-graph">
+            <div class="d-flex flex-row justify-content-between">
+              <h3>Đăng ký</h3>
+              <select name="This Month" id="months-btn">
+                <option>Tháng này</option>
+                <option>Tháng 1</option>
+                <option>Tháng 2</option>
+                <option>Tháng 3</option>
+                <option>Tháng 4</option>
+                <option>Tháng 5</option>
+                <option>Tháng 6</option>
+                <option>Tháng 7</option>
+                <option>Tháng 8</option>
+                <option>Tháng 9</option>
+                <option>Tháng 10</option>
+                <option>Tháng 11</option>
+                <option>Tháng 12</option>
+              </select>
+            </div>
+            
+            <canvas id="linechart" width="18" height="6"></canvas>
+          </div>
+
+           <!--Applicant registrations-->
+      <div class="container">
+        <div class="d-flex flex-row justify-content-between">
+          <h3>Ứng viên đã đăng ký</h3>
+          <select name="This Month" id="months-btn">
+                <option>Tháng này</option>
+                <option>Tháng 1</option>
+                <option>Tháng 2</option>
+                <option>Tháng 3</option>
+                <option>Tháng 4</option>
+                <option>Tháng 5</option>
+                <option>Tháng 6</option>
+                <option>Tháng 7</option>
+                <option>Tháng 8</option>
+                <option>Tháng 9</option>
+                <option>Tháng 10</option>
+                <option>Tháng 11</option>
+                <option>Tháng 12</option>
+          </select>
+        </div>
+        <h2>Tổng cộng 594</h2>
+        <h2 class="lig">Thu nhập được tạo ra</h2>
+        <h2>100.000.000.000 đ</h2>
+        <canvas id="regline1" class="linegh"  ></canvas>
+      </div>
+
+      <!--Recruiter Registrations-->
+      <div class="container">
+        <div class="d-flex flex-row justify-content-between">
+          <h3>Nhà tuyển dụng đã đăng ký</h3>
+          <select name="This Month" id="months-btn">
+                <option>Tháng này</option>
+                <option>Tháng 1</option>
+                <option>Tháng 2</option>
+                <option>Tháng 3</option>
+                <option>Tháng 4</option>
+                <option>Tháng 5</option>
+                <option>Tháng 6</option>
+                <option>Tháng 7</option>
+                <option>Tháng 8</option>
+                <option>Tháng 9</option>
+                <option>Tháng 10</option>
+                <option>Tháng 11</option>
+                <option>Tháng 12</option>
+          </select>
+        </div>
+        <h2>Tổng cộng 594</h2>
+        <h2 class="lig">Thu nhập được tạo ra</h2>
+        <h2>150.000.000.000 đ</h2>
+        <canvas id="regline2" class="linegh" ></canvas>
+      </div>
+         
+        <!-- End Revenue -->
+    </div>
+
+    <hr>
+
+    <footer class="well">
+      &copy; Chúng tôi là những chuyên gia nghiên cứu thị trường làm việc với khách hàng
+       để tạo ra chất lượng cao, dựa trên dữ liệu và nghiên cứu thị trường bất động sản 
+       vô song.<a href="https://anhduc151.github.io/website-real-estate/" target="_blank"> Batdongsan.com
+         </a>
+  </footer>
+
+</div>
+
+<!-- JS Scripts -->
+  <script src="../../js/Linegraph2.js"></script>
+  <script src="../../js/Linegraph.js"></script>
+  <script src="../../js/DonutGraph.js"></script>
+</body>
+</html>

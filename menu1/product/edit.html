@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/> 
+    <title>Sửa sản phẩm</title>
+    <!--Favicon-->
+    <link rel="icon" href="../../img/building.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../../img/building.ico" type="image/x-icon"/>
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    <link href="../../css/site.css" rel="stylesheet">
+    <link href="../../css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../../css/edit.css" rel="stylesheet" >
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="">BatDongSan.com</a>
+                <div class="btn-group pull-right">
+                    <a class="btn" href=""><i class='bx bxs-user-circle'></i></i> Admin</a>
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="">
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Thông tin cá nhân</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">Đăng xuất</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list">
+                    <li class="nav-header"><i class='bx bxs-home'></i> Trang chủ</li>
+                    <li class="active"><a href="index.html">Thông tin trang chủ</a></li>
+
+                    <li class="nav-header"><i class='bx bxs-building'></i> Quản lý sản phẩm</li>
+                    <li><a href="../../menu1/product/add.html">Thêm sản phẩm</a></li>
+                    <li><a href="../../menu1/product/edit.html">Sửa sản phẩm</a></li>
+                    <li><a href="../../menu1/product/remove.html">Xoá sản phẩm</a></li>
+
+                    <li class="nav-header"><i class='bx bxs-user-circle'></i> Quản lý user</li>
+                    <li><a href="../../menu1/user/addUser.html">Thêm tài khoản user</a></li>
+                    <li><a href="../../menu1/user/removeUser.html">Xoá tài khoản user</a></li>
+
+                    <li class="nav-header"><i class='bx bxs-bar-chart-alt-2'></i> Quản lý doanh thu</li>
+                    <li><a href="../../menu1/revenue/statistical.html">Thống kê doanh thu</a></li>
+                    
+                    
+                    <li class="nav-header"><i class='bx bxs-food-menu'></i> Quản lý đơn hàng</li>
+                    <li><a href="../../menu1/shipment/adduserShipment.html">Thêm người dùng</a></li>
+                    <li><a href="../../menu1/shipment/queryShipment.html">Truy vấn người dùng</a></li>
+
+                    <li class="nav-header"><i class='bx bxs-help-circle'></i> Hỗ trợ khách hàng</li>
+                    <li><a href="../../menu1/help/helpUser.html">Đánh giá và yêu cầu của khách hàng</a></li>
+                    
+
+                    
+
+                </ul>
+            </div>
+        </div>
+
+          <!-- form edit -->
+        <div class="span9">
+            <div class="row-fluid">
+                <div class="page-header">
+                    <h1>Quản lý dự án <small></small></h1>
+                </div>
+
+                <table class="table table-striped table-bordered table-condensed">
+                    <thead>
+                    <tr>
+                        
+                        <th>Dự án</th>
+                        <th>Tình trạng</th>
+                        <th>Số lượng</th>
+                        <th>Vị trí</th>
+                        <th>Giá bán</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr class="douban-list">
+                        <td>LandMark City</td>
+                        <td>Chưa bán</td>
+                        <td>2</td>
+                        <td>Dự án phía Bắc</td>
+                        <td>18.000.000.000 đ</td>
+                       
+                        
+                    </tr>
+                    <tr class="douban-list">
+                        <td>VingGroup</td>
+                        <td>Chưa bán</td>
+                        <td>2</td>
+                        <td>Dự án phía Nam</td>
+                        <td>18.000.000.000 đ</td>
+                        
+                        
+                    </tr>
+                    <tr class="douban-list">
+                        <td>LandMark City</td>
+                        <td>Chưa bán</td>
+                        <td>2</td>
+                        <td>Dự án phía Nam</td>
+                        <td>18.000.000.000 đ</td>
+                        
+                        
+                    </tr>
+                    <tr class="douban-list">
+                        <td>LandMark City</td>
+                        <td>Chưa bán</td>
+                        <td>2</td>
+                        <td>Dự án phía Bắc</td>
+                        <td>18.000.000.000 đ</td>
+                        
+                       
+                    </tr>
+                    <tr class="douban-list">
+                        <td>LandMark City</td>
+                        <td>Chưa bán</td>
+                        <td>2</td>
+                        <td>Dự án phía Nam</td>
+                        <td>18.000.000.000 đ</td>
+                        
+                        
+                    </tr>
+                    <tr class="douban-list">
+                        <td>LandMark City</td>
+                        <td>Chưa bán</td>
+                        <td>2</td>
+                        <td>Dự án phía Bắc</td>
+                        <td>18.000.000.000 đ</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="span9">
+            <div class="row-fluid">
+                <div class="page-header">
+                    <h1>Sửa sản phẩm<small></small></h1>
+                </div>
+
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label" >Tên sản phẩm</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" id="" />
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" >Tình trạng</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" id="" />
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" >Số lượng</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" id="book_author" />
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" >Vị trí</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" id="book_press" />
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" >Giá bán</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" id="book_collections" />
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" >Tệp đính kèm</label>
+                            <div class="controls">
+                                <input type="file" class="input-xlarge" id="book_image" />
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <input type="submit" class="btn btn-success" value="Sửa" />
+                            <input type="reset" class="btn" value="Trở lại" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <!-- end form edit -->
+
+    </div>
+
+    <hr>
+
+    <footer class="well">
+        &copy; Chúng tôi là những chuyên gia nghiên cứu thị trường làm việc với khách hàng
+         để tạo ra chất lượng cao, dựa trên dữ liệu và nghiên cứu thị trường bất động sản 
+         vô song.<a href="https://anhduc151.github.io/website-real-estate/" target="_blank"> Batdongsan.com
+           </a>
+    </footer>
+
+</div>
+
+</body>
+</html>
